@@ -9,7 +9,7 @@
 body{
   margin:0;
   font-family:sans-serif;
-  background:linear-gradient(135deg,#051525,#0a3060);
+  background:#0a3060;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -17,76 +17,37 @@ body{
   color:white;
 }
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:30px;
-  border-radius:20px;
   text-align:center;
-  width:90%;
-  max-width:400px;
+  padding:30px;
 }
-h1{margin-bottom:10px}
-p{color:#a8c7e0;margin-bottom:20px}
-
+h1{margin-bottom:20px}
 button{
-  width:100%;
-  padding:15px;
+  padding:20px;
+  font-size:18px;
   border:none;
-  border-radius:12px;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-  margin-top:10px;
-}
-
-.btn{
+  border-radius:10px;
   background:#25D366;
   color:white;
+  cursor:pointer;
 }
-.btn:active{opacity:.8}
-
-#qr{
-  margin:20px auto;
-}
+button:active{opacity:.8}
 </style>
 </head>
 
 <body>
 
 <div class="card">
-  <h1>💧 AquaAlert</h1>
-  <p>Escaneá y avisá cuando se acabe el agua</p>
-
-  <canvas id="qr"></canvas>
-
-  <button class="btn" onclick="abrirWA()">
-    💬 Avisar por WhatsApp
-  </button>
+  <h1>💧 Me quedé sin agua</h1>
+  <button onclick="enviar()">Avisar por WhatsApp</button>
 </div>
 
 <script>
-var tel = "543513294606";
-var lugar = "Dispensador";
-
-function abrirWA(){
-  var msg = "Me quedé sin agua en " + lugar;
-  var link = "https://wa.me/" + tel + "?text=" + encodeURIComponent(msg);
-  window.open(link, '_blank');
+function enviar(){
+  var numero = "543513294606"; // CAMBIAR POR TU NUMERO (sin +)
+  var mensaje = "Me quedé sin agua";
+  var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+  window.location.href = url;
 }
-
-function generarQR(){
-  var url = location.href;
-  var canvas = document.getElementById("qr");
-  var ctx = canvas.getContext("2d");
-  var img = new Image();
-  img.src = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + encodeURIComponent(url);
-  img.onload = function(){
-    canvas.width = 200;
-    canvas.height = 200;
-    ctx.drawImage(img,0,0);
-  }
-}
-
-generarQR();
 </script>
 
 </body>
