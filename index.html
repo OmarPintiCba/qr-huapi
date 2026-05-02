@@ -4,50 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AquaAlert</title>
-
-<style>
-body{
-  margin:0;
-  font-family:sans-serif;
-  background:#0a3060;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  color:white;
-}
-.card{
-  text-align:center;
-  padding:30px;
-}
-h1{margin-bottom:20px}
-button{
-  padding:20px;
-  font-size:18px;
-  border:none;
-  border-radius:10px;
-  background:#25D366;
-  color:white;
-  cursor:pointer;
-}
-button:active{opacity:.8}
-</style>
 </head>
 
 <body>
 
-<div class="card">
-  <h1>💧 Me quedé sin agua</h1>
-  <button onclick="enviar()">Avisar por WhatsApp</button>
-</div>
-
 <script>
-function enviar(){
-  var numero = "543513294606"; // CAMBIAR POR TU NUMERO (sin +)
-  var mensaje = "Me quedé sin agua";
-  var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
-  window.location.href = url;
-}
+var numero = "543513294606";
+var mensaje = "Me quedé sin agua";
+var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
+window.location.replace(url);
 </script>
 
 </body>
