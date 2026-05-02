@@ -3,24 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirigiendo...</title>
+<title>Huapi-Alert</title>
+
+<style>
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#0a3060;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+}
+.card{
+  text-align:center;
+  padding:30px;
+}
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+}
+button{
+  padding:20px;
+  font-size:18px;
+  border:none;
+  border-radius:12px;
+  background:#25D366;
+  color:white;
+  cursor:pointer;
+}
+button:active{
+  opacity:.8;
+}
+</style>
 </head>
 
 <body>
 
-<script>
-// TU NUMERO (sin +)
-var numero = "543513294606";
+<div class="card">
+  <h1>💧 Huapi-Alert</h1>
+  <p>¿Te quedaste sin agua?</p>
 
-// MENSAJE
-var mensaje = "Me quedé sin agua";
-
-// LINK WHATSAPP
-var url = "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensaje);
-
-// REDIRECCIÓN AUTOMÁTICA INMEDIATA
-window.location.replace(url);
-</script>
+  <a href="https://wa.me/543513294606?text=Me%20qued%C3%A9%20sin%20agua" target="_blank">
+    <button>Enviar mensaje</button>
+  </a>
+</div>
 
 </body>
 </html>
